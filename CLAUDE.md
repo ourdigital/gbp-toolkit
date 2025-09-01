@@ -78,4 +78,90 @@ The Google Business Profile API is restricted and requires:
 ## Configuration Files
 - `credentials.json` - OAuth2 client credentials (never commit)
 - `token.json` - Access/refresh tokens (auto-generated, never commit)
+- `.env` - Environment variables for configuration (never commit)
 - Both files should be in .gitignore for security
+
+## Development Phases
+
+### Phase 1: Core Toolkit Foundation ✅ COMPLETE
+**Status**: Released in initial commit (v0.1.0)
+
+**Completed Features**:
+- Modular Python package architecture
+- OAuth2 authentication with environment variable support
+- Complete GBP API client with comprehensive error handling
+- Business profile management utilities
+- Review management and bulk operations
+- Performance insights integration
+- Location validation and CRUD operations
+- Security-first credential protection
+- Comprehensive documentation and examples
+
+### Phase 2: Enterprise Features 🚀 IN PLANNING
+
+#### Priority 1: CLI Interface (v0.2.0)
+**Target**: User-friendly command-line interface to make operations accessible
+
+**Implementation Notes**:
+- Use Click or Typer for CLI framework
+- Commands should follow pattern: `gbp <category> <action> [options]`
+- Add to pyproject.toml console_scripts entry point
+- Include progress bars for long operations
+- Support --json output for automation
+
+#### Priority 2: Enhanced Authentication (v0.2.0)
+**Target**: Production-ready authentication management
+
+**Implementation Notes**:
+- Interactive setup wizard with validation
+- Multiple profile support (personal, work, client-specific)
+- Service account integration for server environments
+- Token health monitoring and auto-refresh
+- Keyring integration for secure storage
+
+#### Priority 3: API Testing & Monitoring (v0.3.0)
+**Target**: Robust connection testing and quota monitoring
+
+**Implementation Notes**:
+- Health check endpoints with retry logic
+- Quota usage tracking with warnings
+- Performance benchmarking with metrics collection
+- Test suite integration with pytest
+- CI/CD compatibility for automated testing
+
+#### Priority 4: Google Maps URI Audit (v0.4.0)
+**Target**: Automated location verification from Maps URLs
+
+**Implementation Notes**:
+- URL parser for Google Maps share links
+- Places API integration for location verification
+- Diff engine for comparing GBP vs Maps data
+- Report generation with actionable recommendations
+- Batch processing for multiple locations
+
+## Development Guidelines for Phase 2
+
+### CLI Implementation
+- Place CLI commands in `src/gbp_toolkit/cli/`
+- Use Click for command framework
+- Implement `--help` for all commands
+- Add progress indicators for long operations
+- Support both interactive and automation modes
+
+### Testing Strategy
+- Add pytest fixtures for API mocking
+- Create integration tests for CLI commands
+- Mock external API calls in unit tests
+- Add test data fixtures for different scenarios
+
+### Google Maps Integration
+- Use Google Places API for location data
+- Parse Maps URLs with regex patterns
+- Handle different Maps URL formats (short links, full URLs)
+- Implement rate limiting for Maps API calls
+
+### Authentication Enhancement
+- Use keyring library for secure credential storage
+- Support multiple credential profiles
+- Add credential validation before API calls
+- Implement service account authentication flow

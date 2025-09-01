@@ -16,7 +16,7 @@ A Python toolkit for managing Google Business Profile via the Google Business Pr
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/ourdigital/gbp-toolkit.git
 cd gbp-toolkit
 
 # Install the package
@@ -209,6 +209,73 @@ flake8 src/
 
 - [Google Business Profile API Documentation](https://developers.google.com/my-business)
 - [Google Business Profile Help Center](https://support.google.com/business/)
+
+## Development Status
+
+### ✅ Phase 1: Core Toolkit Foundation (Complete)
+- [x] Python package structure with modular architecture
+- [x] OAuth2 authentication with environment variable support  
+- [x] Complete GBP API client with comprehensive error handling
+- [x] Business profile management utilities and bulk operations
+- [x] Review management system with reply capabilities
+- [x] Performance insights integration
+- [x] Location validation and CRUD operations
+- [x] Security-first approach with credential protection
+- [x] Comprehensive documentation and setup guides
+- [x] Working examples with real-world scenarios
+
+### 🚀 Phase 2: Enterprise Features (Planned)
+
+#### 1. Enhanced OAuth & Authentication Management
+- [ ] Interactive OAuth setup wizard (`gbp auth setup`)
+- [ ] Multiple credential profile management
+- [ ] Service account support for production environments
+- [ ] Automated token refresh and health monitoring
+- [ ] Secure credential storage (keyring, vault integration)
+- [ ] Credential validation and expiry alerts
+
+#### 2. Custom CLI Command Interface
+- [ ] User-friendly command-line interface
+- [ ] Planned commands:
+  ```bash
+  gbp auth setup                    # OAuth setup wizard
+  gbp locations list                # List all locations  
+  gbp reviews list <location>       # Show recent reviews
+  gbp reviews reply <location>      # Bulk reply to reviews
+  gbp audit <maps-url>              # Audit location from Maps URL
+  gbp test connection               # Test API connectivity
+  gbp profile <location>            # Show location profile
+  ```
+
+#### 3. GBP API Connection Tests & Monitoring
+- [ ] Connection health checks and uptime monitoring
+- [ ] API quota usage monitoring and alerts
+- [ ] Rate limit compliance testing
+- [ ] Endpoint availability verification
+- [ ] Performance benchmarking and analytics
+- [ ] Automated test suite for CI/CD integration
+
+#### 4. Google Maps URI Audit & Verification System
+- [ ] Extract and parse location data from Google Maps share URLs
+- [ ] Cross-reference Maps data with GBP location profiles
+- [ ] Identify discrepancies in business information
+- [ ] Generate comprehensive audit reports
+- [ ] Automated correction suggestions
+- [ ] Location accuracy and completeness scoring
+
+## Roadmap
+
+**Current Priority**: Building CLI interface as foundation for enterprise features
+
+**Next Releases**:
+- v0.2.0: CLI Interface + Enhanced Authentication
+- v0.3.0: API Testing & Monitoring Suite  
+- v0.4.0: Google Maps Audit System
+- v1.0.0: Production-ready enterprise toolkit
+
+## Contributing
+
+This project is actively developed. See [SETUP.md](SETUP.md) for development environment setup.
 
 ## License
 
